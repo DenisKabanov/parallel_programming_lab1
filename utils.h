@@ -4,6 +4,8 @@
 #include <cstring>
 #include <chrono>
 #include <pthread.h>
+#include <cmath> // ceil
+#include <iomanip> // std::setprecision
 
 using namespace std;
 using namespace std::chrono;
@@ -40,3 +42,19 @@ void print_arr(int **array, size_t rows, size_t cols){
         cout << endl;
     }
 }
+
+void free_arrs(int **arrayA, int **arrayB, int **arrayC, size_t rows_A, size_t rows_B){ // освобождение памяти
+    for(int i = 0; i < rows_A; ++i){
+        delete[] arrayA[i];
+        delete[] arrayC[i];
+    }
+    for(int i = 0; i < rows_B; ++i)
+        delete[] arrayB[i];
+
+    delete[] arrayA;
+    delete[] arrayB;
+    delete[] arrayC;
+}
+
+// вспомогательные команды
+// cout << "thread: " << my_rank << " rows per thread: " << rows_per_thread << " my_first_row: " << my_first_row << " my_last_row: " << my_last_row<< endl;
