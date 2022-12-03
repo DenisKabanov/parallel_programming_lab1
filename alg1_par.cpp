@@ -6,12 +6,6 @@ int** A;
 int** B;
 int** C;
 
-// struct data_for_threads{
-//     int  thread_id;
-//     int  sum;
-//     char *message;
-// };
-
 void* Routine(void* rank);
 
 int main(int argc, char* argv[]) {
