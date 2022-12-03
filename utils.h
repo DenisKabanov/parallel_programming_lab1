@@ -43,6 +43,12 @@ void print_arr(int **array, size_t rows, size_t cols){
     }
 }
 
+void free_arr(int **array, size_t rows){
+    for(int i = 0; i < rows; ++i)
+        delete[] array[i];
+    delete[] array;
+}
+
 void free_arrs(int **arrayA, int **arrayB, int **arrayC, size_t rows_A, size_t rows_B){ // освобождение памяти
     for(int i = 0; i < rows_A; ++i){
         delete[] arrayA[i];
@@ -58,3 +64,24 @@ void free_arrs(int **arrayA, int **arrayB, int **arrayC, size_t rows_A, size_t r
 
 // вспомогательные команды
 // cout << "thread: " << my_rank << " rows per thread: " << rows_per_thread << " my_first_row: " << my_first_row << " my_last_row: " << my_last_row<< endl;
+
+// int*** temp_arr = new int**[cols_A]; // массив для избежания data race 
+// for (int i = 0; i < cols_A; ++i) {
+//     temp_arr[i] = new int*[cols_B];
+//     for(int j = 0; j < cols_B; ++j){
+//         temp_arr[i][j] = new int[rows_A];
+//         for(int k = 0; k < rows_A; ++k)
+//             temp_arr[i][j][k] = 0;
+//     }
+// }
+
+// for(int i = 0; i < cols_A; ++i) {
+//     for(int j = 0; j < cols_B; ++j){
+//         for(int k = 0; k < rows_A; ++k){
+//             //cout << "i:" << i << " j: " << j << " k: " << k << endl;
+//             cout << temp_arr[i][j][k] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl << endl;
+// }
