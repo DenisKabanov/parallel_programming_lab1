@@ -10,7 +10,7 @@ void* Routine(void* rank);
 
 int main(int argc, char* argv[]) {
     if (argc < 4) // проверка наличия аргументов (сама программа + файл1 + файл2 + число потоков)
-        throw runtime_error("The program must have arguments!");
+        throw runtime_error("The program must have 3 arguments!");
 
     A = read_file(argv[1], rows_A, cols_A);
     B = read_file(argv[2], rows_B, cols_B);
