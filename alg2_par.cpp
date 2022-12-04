@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<nanoseconds>(stop - start);
-    cout << "Alg 2: column by row multiplication without parallel execution" << endl;
+    cout << "Alg 2: column by row multiplication with parallel execution" << endl;
     // cout << "Matrix A: " << endl;
     // print_arr(A, rows_A, cols_A);
     // cout << "Matrix B: " << endl;
