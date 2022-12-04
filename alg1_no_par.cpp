@@ -7,7 +7,7 @@ int** C;
 
 int main(int argc, char* argv[]) {
     if (argc < 3) // проверка наличия аргументов (сама программа + файл1 + файл2)
-        throw runtime_error("The program must have arguments!");
+        throw runtime_error("The program must have 2 arguments!");
 
     A = read_file(argv[1], rows_A, cols_A);
     B = read_file(argv[2], rows_B, cols_B);
