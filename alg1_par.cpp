@@ -36,14 +36,15 @@ int main(int argc, char* argv[]) {
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<nanoseconds>(stop - start);
 
-    cout << "Alg 1: row by column multiplication with parallel execution" << endl;
+    // cout << "Alg 1: row by column multiplication with parallel execution" << endl;
     // cout << "Matrix A: " << endl;
     // print_arr(A, rows_A, cols_A);
     // cout << "Matrix B: " << endl;
     // print_arr(B, rows_B, cols_B);
-    cout << "Result: " << endl;
-    print_arr(C, rows_A, cols_B);
-    cout << fixed << "Time: " << setprecision(12) << duration.count() * 1e-9 << " seconds."<< endl; // fixed - вывод без сокращения до 1e-...; setprecision(12) - вывод 12 знаков после запятой
+    // cout << "Result: " << endl;
+    // print_arr(C, rows_A, cols_B);
+    // cout << fixed << "Time: " << setprecision(12) << duration.count() * 1e-9 << " seconds."<< endl; // fixed - вывод без сокращения до 1e-...; setprecision(12) - вывод 12 знаков после запятой
+    cout << fixed << setprecision(12) << duration.count() * 1e-9 << endl;
 
     free_arrs(A, B, C, rows_A, rows_B);
 
