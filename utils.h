@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <cmath> // ceil
 #include <iomanip> // std::setprecision
+#include <cmath> // sqrt
 
 using namespace std;
 using namespace std::chrono;
@@ -60,6 +61,17 @@ void free_arrs(int **arrayA, int **arrayB, int **arrayC, size_t rows_A, size_t r
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;
+}
+
+void degree(int number, int &res){ // получение степени двойки
+    int i = 0;
+    while (number / 2 != 0){
+        if ((float)number / 2 != number / 2)
+            throw runtime_error("Please, set thread_count to 2 in an even degree");
+        number = number / 2;
+        i++;
+    }
+    res = i;
 }
 
 // вспомогательные команды
