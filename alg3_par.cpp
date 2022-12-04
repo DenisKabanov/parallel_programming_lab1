@@ -37,8 +37,12 @@ int main(int argc, char* argv[]) {
         cols_per_block_A = cols_A / sqrt(thread_count);
         rows_per_block_B = rows_B / sqrt(thread_count);
         cols_per_block_B = cols_B / sqrt(thread_count);
-    } else {
-        cout << "TODO" << endl;
+    } else { // разбиение в блоки-строки
+        // cout << "odd degree" << endl;
+        rows_per_block_A = rows_A / thread_count;
+        cols_per_block_A = cols_A;
+        rows_per_block_B = rows_B;
+        cols_per_block_B = cols_B / thread_count;
     }
 
     blocks_on_one_row_A = cols_A / cols_per_block_A;
